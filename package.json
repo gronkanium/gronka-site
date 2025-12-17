@@ -1,0 +1,17 @@
+{
+  "name": "gronka-site",
+  "version": "1.0.0",
+  "description": "Jekyll documentation site for Gronka Discord bot",
+  "type": "module",
+  "scripts": {
+    "kv:fetch-stats": "node scripts/fetch-stats-from-kv.js",
+    "jekyll:build": "bundle exec jekyll build",
+    "jekyll:serve": "bundle exec jekyll serve"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "dotenv": "^17.2.3"
+  },
+  "author": "gronkanium",
+  "license": "MIT"
+}
