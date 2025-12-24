@@ -1,8 +1,6 @@
 main:
   - title: home
     url: /
-  - title: blog
-    url: /blog/
   - title: privacy
     url: /privacy/
   - title: terms
@@ -13,5 +11,3 @@ footer:
     url: /privacy/
   - title: terms of use
     url: /terms/
-  - title: blog
-    url: /blog/
