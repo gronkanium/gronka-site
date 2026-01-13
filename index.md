@@ -1,14 +1,14 @@
 ---
 layout: default
-description: a discord bot that downloads media from social media and urls, then converts it to gifs. supports twitter, tiktok, instagram, youtube, reddit, facebook, and more.
-image: https://cdn.discordapp.com/attachments/1335451213285822485/1440055450132414736/content.png?ex=691cc3a6&is=691b7226&hm=864a8c2f8d7ee5aaa7dac42318d3364032d9d29099057b1c7a3e0fb41a4063dd&
+description: a discord bot that downloads from social media and converts to gif
+image: /assets/favicon.png
 ---
 
 ![Discord.js](https://img.shields.io/badge/Discord.js-14.14-5865F2?logo=discord&logoColor=white)
 [![Add to Discord](https://img.shields.io/badge/Add_to_Discord-5865F2?logo=discord&logoColor=white)](https://discord.com/oauth2/authorize?client_id=1439329052002357599)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white)](https://github.com/thedorekaczynski/gronka)
 
-a discord bot that downloads media from social media platforms and urls, then converts it to gifs.
+a discord bot that downloads from social media and converts to gif.
 
 ## what it does
 
