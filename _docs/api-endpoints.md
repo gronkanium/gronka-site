@@ -84,7 +84,7 @@ stats are cached for 5 minutes by default (configurable via `STATS_CACHE_TTL`). 
 
 ### `GET /api/stats/24h`
 
-get 24-hour activity statistics for jekyll site footer.
+get 24-hour activity statistics.
 
 **authentication:**
 
@@ -92,7 +92,7 @@ if `STATS_USERNAME` and `STATS_PASSWORD` are configured, basic auth is required.
 
 **purpose:**
 
-returns statistics about user activity in the past 24 hours, including unique users, total files processed, and total data processed. this endpoint is designed for use by the jekyll site stats polling script.
+returns statistics about user activity in the past 24 hours, including unique users, total files processed, and total data processed. also used by the docker healthcheck.
 
 **response:**
 
@@ -142,8 +142,7 @@ curl -v -u admin:password http://localhost:3000/api/stats/24h
 
 **use cases:**
 
-- jekyll site footer statistics display
-- automated stats polling via `scripts/update-jekyll-stats.js`
+- docker container healthcheck
 - monitoring 24-hour activity trends
 
 **notes:**

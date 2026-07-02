@@ -267,27 +267,6 @@ port for the express server.
 SERVER_PORT=3000
 ```
 
-### `BOT_API_URL`
-
-url of the bot server api endpoint for jekyll stats polling.
-
-**required for jekyll stats feature**
-
-**format:** `http://IP_ADDRESS:PORT` or `http://localhost:3000`
-
-**default:** `http://localhost:3000`
-
-**notes:**
-- use the local network ip address of the bot server, not `localhost`
-- the bot server must be accessible from the jekyll server over the network
-- used by `scripts/update-jekyll-stats.js` to fetch stats from `/api/stats/24h` endpoint
-
-**example:**
-
-```env
-BOT_API_URL=http://192.168.0.212:3000
-```
-
 ### `STATS_USERNAME`
 
 username for basic auth on `/stats` and `/api/stats/24h` endpoints.

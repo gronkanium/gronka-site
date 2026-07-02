@@ -182,7 +182,7 @@ optimization levels:
 
 implementation:
 
-uses `giflossy` docker container (dylanninin/giflossy) which wraps `gifsicle` for gif optimization:
+uses `gifsicle` (installed in the app docker image) for gif optimization:
 
 ```bash
 gifsicle --optimize=3 --lossy=80 input.gif -o output.gif
@@ -255,7 +255,7 @@ disk space management (optional enhancement):
 
 ### 4. cdn server (deprecated as of v0.13.0)
 
-note: the standalone cdn server (`server.js`) has been removed. files are now served directly from r2 or discord, and the bot includes a minimal stats http server for jekyll integration.
+note: the standalone cdn server (`server.js`) has been removed. files are now served directly from r2 or discord, and the bot includes a minimal http server for the `/api/stats/24h` endpoint (used by the docker healthcheck).
 
 express configuration:
 
