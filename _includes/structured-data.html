@@ -4,6 +4,7 @@
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "{{ site.title | escape }}",
+    "alternateName": ["gronka bot", "gronka discord bot"],
     "description": "{{ site.description | escape }}",
     "applicationCategory": "Discord Bot",
     "operatingSystem": "Discord",
@@ -17,7 +18,7 @@
       "name": "{{ site.author | default: site.title | escape }}"
     },
     "url": "{{ site.url }}{{ site.baseurl }}{{ page.url }}",
-    "sameAs": ["https://github.com/gronkanium/gronka"]
+    "sameAs": ["https://github.com/thedorekaczynski/gronka"]
   }
 </script>
 {%- endif -%} {%- if page.layout == 'doc' -%}
