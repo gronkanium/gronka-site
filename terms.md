@@ -7,7 +7,7 @@ permalink: /terms/
 
 # Terms of Use
 
-**Last Updated:** December 2, 2025
+**Last Updated:** July 7, 2026
 
 ## Agreement to Terms
 
@@ -21,7 +21,7 @@ gronka is a Discord bot that:
 - downloads media from supported social platforms (twitter/x, tiktok, instagram, youtube, and others)
 - stores and serves converted files via CDN
 
-available commands: `/convert`, `/download`, `/info`, plus context menu actions for quick access.
+available commands: `/convert`, `/download`, `/optimize`, `/stats`, `/info`, plus context menu actions for quick access.
 
 ## Acceptable Use
 
@@ -60,30 +60,17 @@ limits may change without notice to ensure service stability.
 gronka uses:
 
 - **discord.js** for bot functionality
-- **ffmpeg** for video/image conversion
+- **ffmpeg** and **gifsicle** for video/image conversion and gif optimization
 - **cloudflare r2** (optional) for file storage and CDN
-- **cobalt.tools** for social media downloads (see below)
+- hosted instances of **cobalt** and **yt-dlp** for social media downloads (see below)
 
 files are stored either on cloudflare r2 or local storage, depending on configuration.
 
-## Cobalt.tools Integration
+## Social Media Downloads
 
-gronka uses cobalt.tools, a third-party open-source service, to download media from social platforms.
+gronka fetches media from social platforms using hosted instances of [cobalt](https://github.com/imputnet/cobalt) (AGPL-3.0) and [yt-dlp](https://github.com/yt-dlp/yt-dlp) (Unlicense), two open-source download tools. these run on our own infrastructure — gronka itself is licensed under the MIT License, and the tools' licenses apply to us as the operator, not to your use of the bot.
 
-**important licensing information:**
-
-- **gronka** is licensed under the MIT License (permissive)
-- **cobalt.tools** is licensed under the AGPL-3.0 (copyleft)
-
-these are separate services with different licenses. when you use the `/download` command with social media urls, you're using cobalt.tools functionality through our integration.
-
-by using `/download`, you acknowledge that:
-
-- the download is performed by cobalt.tools, not directly by gronka
-- your use is subject to cobalt.tools' terms and the AGPL-3.0 license
-- we're not responsible for cobalt.tools' availability or functionality
-
-for more information, visit [cobalt.tools](https://cobalt.tools) or the [cobalt source repository](https://github.com/imputnet/cobalt).
+we don't control the source platforms (twitter/x, tiktok, instagram, youtube, and others) and can't guarantee that any particular url or platform will work. platforms change their apis and restrictions without notice, and downloads may fail or stop working at any time.
 
 ## Your Responsibilities
 
@@ -109,9 +96,8 @@ this service uses:
 
 - **discord** - bot platform (subject to discord's terms)
 - **cloudflare** - CDN and storage
-- **cobalt.tools** - social media downloads (AGPL-3.0 licensed)
 
-your use of these services is subject to their respective terms.
+your use of these services is subject to their respective terms. cobalt and yt-dlp are open-source tools we host ourselves, not third-party services — see "Social Media Downloads" above.
 
 ## Intellectual Property
 
