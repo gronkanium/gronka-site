@@ -17,7 +17,7 @@ By using gronka, you agree to these terms. If you don't agree, don't use the ser
 gronka is a Discord bot that:
 
 - converts videos and images to GIF format
-- downloads media from social platforms (twitter/x, tiktok, instagram, reddit, facebook, threads)
+- downloads media from supported social platforms (twitter/x, tiktok, instagram, youtube, and others)
 - stores and serves converted files via CDN
 
 available commands: `/convert`, `/download`, `/info`, plus context menu actions for quick access.

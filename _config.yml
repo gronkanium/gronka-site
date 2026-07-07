@@ -1,6 +1,6 @@
 title: gronka
 tagline: discord bot for downloading media and making gifs
-description: gronka is a free, open-source discord bot that downloads videos from twitter/x, tiktok, instagram, youtube, reddit, facebook, and threads, and converts videos and images to gifs
+description: gronka is a free, open-source discord bot that converts videos and images to gifs and downloads media from twitter/x, tiktok, instagram, youtube, and more
 url: https://gronka.p1x.dev
 baseurl: ""
 lang: en
@@ -27,24 +27,6 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
 
-
-# collections
-collections:
-  docs:
-    output: true
-    permalink: /docs/:name/
-
-# collection defaults
-defaults:
-  - scope:
-      path: ""
-      type: docs
-    values:
-      layout: doc
-  - scope:
-      path: "docs.md"
-    values:
-      layout: doc
 
 # include cloudflare pages configuration files
 include:
