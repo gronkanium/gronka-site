@@ -1,7 +1,8 @@
-﻿---
+---
 layout: default
 title: Privacy Policy
 description: Privacy policy for gronka Discord bot. Learn how we handle your data, file storage, and privacy rights.
+permalink: /privacy/
 ---
 
 # Privacy Policy

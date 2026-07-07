@@ -1,7 +1,8 @@
-﻿---
+---
 layout: default
 title: Terms of Use
 description: Terms of use for gronka Discord bot. Acceptable use policy, user responsibilities, and service terms.
+permalink: /terms/
 ---
 
 # Terms of Use

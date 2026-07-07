@@ -2,6 +2,7 @@
 layout: default
 title: donate
 description: send monero if you want
+permalink: /donate/
 ---
 
 <div class="donate-container">
