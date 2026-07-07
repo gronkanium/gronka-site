@@ -1,4 +1,4 @@
----
+﻿---
 layout: default
 title: Privacy Policy
 description: Privacy policy for gronka Discord bot. Learn how we handle your data, file storage, and privacy rights.
@@ -69,7 +69,7 @@ You have the right to:
 - **Deletion**: Request deletion of your data (subject to technical limitations)
 - **Opt-Out**: Stop using the bot at any time
 
-To exercise these rights, contact us via email at gronkasupport@proton.me or through the [GitHub repository](https://github.com/gronkanium/gronka).
+To exercise these rights, contact us via email at gronkasupport@proton.me or through the [GitHub repository](https://github.com/thedorekaczynski/gronka).
 
 ## Data Security
 
@@ -96,7 +96,7 @@ Your continued use of the service after changes constitutes acceptance of the up
 If you have questions about this privacy policy, please contact us:
 
 - **Email**: gronkasupport@proton.me
-- **GitHub**: [https://github.com/gronkanium/gronka](https://github.com/gronkanium/gronka)
+- **GitHub**: [https://github.com/thedorekaczynski/gronka](https://github.com/thedorekaczynski/gronka)
 
 ## Third-Party Services
 

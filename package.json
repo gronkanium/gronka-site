@@ -7,6 +7,6 @@
     "jekyll:build": "bundle exec jekyll build",
     "jekyll:serve": "bundle exec jekyll serve"
   },
-  "author": "gronkanium",
+  "author": "thedorekaczynski",
   "license": "MIT"
 }
