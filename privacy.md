@@ -7,7 +7,7 @@ permalink: /privacy/
 
 # Privacy Policy
 
-**Last Updated:** November 15, 2025
+**Last Updated:** July 7, 2026
 
 ## Introduction
 
@@ -20,21 +20,22 @@ This privacy policy describes how gronka ("we", "our", or "the service") handles
 When you use gronka, we may receive the following information from Discord:
 
 - **User Information**: Your Discord user ID and username (as provided by Discord's API)
-- **Message Content**: Video and image files you submit for conversion
+- **Message Content**: Video and image files you submit for conversion or optimization, and social media URLs you submit for download
 - **Command Usage**: Information about when and how you use bot commands
 
 ### Automatically Collected Data
 
 - **File Hashes**: BLAKE3 hashes of processed files for deduplication purposes
 - **Usage Statistics**: User-specific metrics about bot usage (number of conversions, file sizes, command usage, etc.)
-- **Error Logs**: Technical information when errors occur (does not include personal data)
+- **Error Logs**: Technical information when errors occur (may include your Discord user ID and file metadata, but not file contents or message text)
 
 ## How We Use Your Information
 
 We use the collected information to:
 
 - Process and convert your video and image files to GIF format
-- Store converted GIFs and serve them via our CDN
+- Download media from social platforms at your request
+- Store converted and downloaded files and serve them via our CDN
 - Prevent duplicate processing of identical files
 - Monitor service health and diagnose technical issues
 - Generate usage statistics for service monitoring
@@ -43,10 +44,11 @@ We use the collected information to:
 
 ### File Storage
 
-- Converted GIF files are stored on our servers
+- Converted GIFs and downloaded media files are stored on our servers
 - Files are identified by BLAKE3 hash
 - Files may be linked to user information through processing records for operational purposes
 - Files may be cached indefinitely for CDN performance
+- Some downloaded files served via the CDN are stored temporarily and deleted automatically after a set period
 
 ### Logs
 
@@ -109,13 +111,16 @@ This service uses the following third-party services:
 
 These services have their own privacy policies governing data handling.
 
+When you use the download command, the URL you submit is fetched from the source platform (e.g. Twitter/X, TikTok, Instagram, YouTube) by download tools running on our own infrastructure. The source platform sees the request from our servers, not from you, and its own privacy policy governs that interaction.
+
 ## Data Retention
 
-- **GIF Files**: Retained indefinitely unless manually deleted
+- **Media Files**: Retained indefinitely unless manually deleted, except temporary CDN uploads, which are deleted automatically after a set period
 - **Logs**: Retained indefinitely unless manually deleted
 - **Statistics**: User-specific statistics are retained indefinitely
 - **Processed URLs**: Records linking URLs to files and user IDs are retained indefinitely
 - **User Data**: User IDs, usernames, and usage timestamps are retained indefinitely
+- **Moderation Records**: If you are banned from the service, your user ID and the ban reason are retained indefinitely
 
 ## International Data Transfers
 
