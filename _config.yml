@@ -23,6 +23,9 @@ keywords: "discord, bot, gif, video, converter, social media, download, media, c
 # build settings
 markdown: kramdown
 theme: minima
+sass:
+  sourcemap: never
+  style: compressed
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
