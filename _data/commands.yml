@@ -90,17 +90,18 @@
 
 - name: download
   type: slash
-  description: download a video from social media (cobalt, with yt-dlp for youtube)
+  description: download a video or image from 20+ platforms (cobalt + yt-dlp), each source individually toggleable from the dashboard
   usage: '/download url:<url> [start_time] [end_time]'
   examples:
     - '/download url:https://twitter.com/example/status/123'
+    - '/download url:https://reddit.com/r/example/comments/abc'
     - '/download url:https://youtube.com/watch?v=example start_time:30 end_time:60'
   context_menu: true
   context_menu_name: download
   options:
     - name: url
       type: string
-      description: url to a social media video to download
+      description: url to a video or image to download
       required: true
     - name: start_time
       type: number

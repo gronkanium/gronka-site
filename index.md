@@ -1,6 +1,6 @@
 ---
 layout: default
-description: gronka is a free, open-source discord bot that converts videos and images to gifs and downloads media from twitter/x, tiktok, instagram, youtube, and more
+description: gronka is a free, open-source discord bot that converts videos and images to gifs and downloads media from 20+ platforms — twitter/x, tiktok, instagram, youtube, reddit, and more
 image: /assets/og-image.png
 ---
 
@@ -13,11 +13,13 @@ gronka is a free, open-source discord bot that downloads videos and images from 
 
 ## commands
 
-- `/download` - download from twitter/x, tiktok, instagram, youtube, and more
+- `/download` - download from 20+ platforms: twitter/x, tiktok, instagram, youtube, reddit, twitch, imgur, and more
 - `/convert` - turn a video or image into a gif
 - `/optimize` - compress an existing gif
 
 you can also right-click any message and use the context menu.
+
+every download source can be turned on or off individually from the built-in web dashboard.
 
 ## self-hosting
 

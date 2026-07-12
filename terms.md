@@ -68,7 +68,7 @@ files are stored either on cloudflare r2 or local storage, depending on configur
 
 ## Social Media Downloads
 
-gronka fetches media from social platforms using hosted instances of [cobalt](https://github.com/imputnet/cobalt) (AGPL-3.0) and [yt-dlp](https://github.com/yt-dlp/yt-dlp) (Unlicense), two open-source download tools. these run on our own infrastructure — gronka itself is licensed under the MIT License, and the tools' licenses apply to us as the operator, not to your use of the bot.
+gronka fetches media from source platforms using hosted instances of [cobalt](https://github.com/imputnet/cobalt) (AGPL-3.0) and [yt-dlp](https://github.com/yt-dlp/yt-dlp) (Unlicense), two open-source download tools, and for some sources by fetching the media directly. these run on our own infrastructure — gronka itself is licensed under the MIT License, and the tools' licenses apply to us as the operator, not to your use of the bot.
 
 we don't control the source platforms (twitter/x, tiktok, instagram, youtube, and others) and can't guarantee that any particular url or platform will work. platforms change their apis and restrictions without notice, and downloads may fail or stop working at any time.
 
