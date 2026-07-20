@@ -1,6 +1,6 @@
 ---
 layout: command
-title: "/info — view gronka bot statistics and system info in Discord"
+title: "/info — bot stats & system info in Discord"
 description: "View gronka's bot statistics, system information, cache stats, and GIF storage usage with the /info command inside Discord."
 permalink: /commands/info/
 command_data: info

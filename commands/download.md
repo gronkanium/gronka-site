@@ -1,7 +1,7 @@
 ---
 layout: command
-title: "/download — download videos from TikTok, Twitter, Instagram & more in Discord"
-description: "Download videos and images from 20+ platforms — TikTok, Twitter/X, Instagram, YouTube, Reddit, Twitch and more — directly in Discord with gronka's /download command. Free and open source."
+title: "/download — TikTok, Twitter & Instagram videos in Discord"
+description: "Download videos from TikTok, Twitter/X, Instagram, YouTube, Reddit & more directly in Discord with gronka's /download command. Free and open source."
 permalink: /commands/download/
 command_data: download
 ---
