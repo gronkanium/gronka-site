@@ -1,14 +1,6 @@
-main:
-  - title: home
-    url: /
+footer:
   - title: commands
     url: /commands/
-  - title: privacy
-    url: /privacy/
-  - title: terms
-    url: /terms/
-
-footer:
   - title: privacy policy
     url: /privacy/
   - title: terms of use

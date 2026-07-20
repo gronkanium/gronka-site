@@ -4,11 +4,6 @@
   <div class="command-item">
     <h2>
       <code>/{{ command.name }}</code>
-      {%- if command.context_menu -%}
-      <span class="context-menu-badge">context menu</span>
-      {%- endif -%} {%- if command.admin_only -%}
-      <span class="admin-badge">admin</span>
-      {%- endif -%}
     </h2>
     <p>{{ command.description }}</p>
     <p class="command-usage"><code>{{ command.usage }}</code></p>
