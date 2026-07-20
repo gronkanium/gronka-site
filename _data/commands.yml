@@ -80,14 +80,6 @@
     - range: '60-100'
       description: more compression, lower quality, smaller files
 
-- name: stats
-  type: slash
-  description: view bot statistics and gif storage information
-  usage: '/stats'
-  examples:
-    - '/stats'
-  context_menu: false
-
 - name: download
   type: slash
   description: download a video or image from 20+ platforms (cobalt + yt-dlp), each source individually toggleable from the dashboard
@@ -116,7 +108,7 @@
 
 - name: info
   type: slash
-  description: view system information, cache stats, and storage usage
+  description: view bot statistics, system information, and gif storage/cache usage
   usage: '/info'
   examples:
     - '/info'

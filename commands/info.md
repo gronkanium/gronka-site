@@ -1,9 +1,9 @@
 ---
 layout: command
-title: "/info — view gronka system information in Discord"
-description: "View gronka's system information, cache stats, and storage usage with the /info command inside Discord."
+title: "/info — view gronka bot statistics and system info in Discord"
+description: "View gronka's bot statistics, system information, cache stats, and GIF storage usage with the /info command inside Discord."
 permalink: /commands/info/
 command_data: info
 ---
 
-`/info` reports system information, cache stats, and storage usage — a quick health check for anyone running or self-hosting gronka.
+`/info` reports bot statistics, system information, and GIF storage/cache usage in one place — a quick way to see how much gronka has been used and a health check for anyone running or self-hosting it.

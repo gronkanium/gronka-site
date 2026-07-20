@@ -11,7 +11,7 @@ GIFs. Built with [Jekyll](https://jekyllrb.com/) and served at
 | --- | --- |
 | `index.md` | Home page (overview + quick start) |
 | `donate.md` / `privacy.md` / `terms.md` | Standalone pages |
-| `_data/commands.yml` | Source of truth for the command reference (`/download`, `/convert`, `/optimize`, `/stats`, `/info`) |
+| `_data/commands.yml` | Source of truth for the command reference (`/download`, `/convert`, `/optimize`, `/info`) |
 | `_data/navigation.yml` | Nav links |
 | `_includes/` / `_layouts/` / `_sass/` | Templates and styles |
 | `assets/` | Images (incl. the OG image) and static assets |

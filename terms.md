@@ -21,7 +21,7 @@ gronka is a Discord bot that:
 - downloads media from supported social platforms (twitter/x, tiktok, instagram, youtube, and others)
 - stores and serves converted files via CDN
 
-available commands: `/convert`, `/download`, `/optimize`, `/stats`, `/info`, plus context menu actions for quick access.
+available commands: `/convert`, `/download`, `/optimize`, `/info`, plus context menu actions for quick access.
 
 ## Acceptable Use
 
