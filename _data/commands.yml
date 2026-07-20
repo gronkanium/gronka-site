@@ -3,10 +3,10 @@
   description: convert a video (max 100mb) or image (max 50mb) to gif
   usage: '/convert [file|url] [quality] [optimize] [lossy] [start_time] [end_time]'
   examples:
-    - '/convert file:<attachment>'
+    - '/convert file:[attachment]'
     - '/convert url:https://example.com/video.mp4'
     - '/convert url:https://example.com/video.mp4 start_time:30 end_time:60'
-    - '/convert file:<attachment> quality:high optimize:true lossy:50'
+    - '/convert file:[attachment] quality:high optimize:true lossy:50'
   context_menu: true
   context_menu_name: convert to gif
   context_menu_advanced: true
@@ -53,7 +53,7 @@
   description: optimize a gif file (max 50mb) to reduce its size
   usage: '/optimize [file|url] [lossy]'
   examples:
-    - '/optimize file:<attachment>'
+    - '/optimize file:[attachment]'
     - '/optimize url:https://example.com/gif.gif lossy:50'
   context_menu: true
   context_menu_name: optimize
@@ -83,7 +83,7 @@
 - name: download
   type: slash
   description: download a video or image from 20+ platforms (cobalt + yt-dlp), each source individually toggleable from the dashboard
-  usage: '/download url:<url> [start_time] [end_time]'
+  usage: '/download url:[url] [start_time] [end_time]'
   examples:
     - '/download url:https://twitter.com/example/status/123'
     - '/download url:https://reddit.com/r/example/comments/abc'
