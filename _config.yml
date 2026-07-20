@@ -20,6 +20,12 @@ image: /assets/og-image.png
 # Additional SEO metadata
 keywords: "discord, bot, gif, video, converter, social media, download, media, conversion"
 
+# analytics / ads / heatmaps (production only; blank = disabled)
+# see _includes/tracking.html
+gtm_id: "GTM-PNKLQBTV"  # container for GA4, pixels, conversions
+clarity_id: "xp6mutexk8"          # Microsoft Clarity heatmaps
+adsense_id: "ca-pub-4600565639002892"  # AdSense auto ads
+
 # build settings
 markdown: kramdown
 theme: minima

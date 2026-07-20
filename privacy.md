@@ -111,6 +111,16 @@ This service uses the following third-party services:
 
 These services have their own privacy policies governing data handling.
 
+### Website Analytics, Heatmaps, and Advertising
+
+Our website (separate from the Discord bot) uses the following third-party services, which set cookies and collect usage data such as pages visited, approximate location, device/browser, and interactions:
+
+- **Google Tag Manager / Google Analytics**: aggregate site traffic and usage analytics
+- **Microsoft Clarity**: heatmaps and anonymized session recordings to understand how visitors use the site
+- **Google AdSense**: advertising, which may use cookies to serve and measure ads
+
+Where required by law (e.g. GDPR in the EU/UK), non-essential cookies and trackers load only after you consent via the cookie banner shown on your first visit. You can change or withdraw consent at any time through that banner. You can also opt out of personalized Google ads at [adssettings.google.com](https://adssettings.google.com).
+
 When you use the download command, the URL you submit is fetched from the source platform (e.g. Twitter/X, TikTok, Instagram, YouTube) by download tools running on our own infrastructure. The source platform sees the request from our servers, not from you, and its own privacy policy governs that interaction.
 
 ## Data Retention

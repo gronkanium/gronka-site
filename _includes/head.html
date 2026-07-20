@@ -16,8 +16,6 @@
   <link rel="stylesheet" href="{{ "/assets/css/syntax.css" | relative_url }}">
   <link rel="icon" type="image/webp" href="{{ "/assets/favicon.webp" | relative_url }}">
   {%- feed_meta -%}
-  {%- if jekyll.environment == 'production' and site.google_analytics -%}
-    {%- include google-analytics.html -%}
-  {%- endif -%}
+  {%- include tracking.html -%}
 </head>
 
