@@ -9,17 +9,17 @@ image: /assets/og-image.png
 [![Add to Discord](https://img.shields.io/badge/Add_to_Discord-5865F2?logo=discord&logoColor=white)](https://discord.com/oauth2/authorize?client_id=1522194017692156046)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white)](https://github.com/thedorekaczynski/gronka)
 
-gronka is a free, open-source discord bot that downloads videos and images from social media and converts them to gifs — right inside your server.
+gronka is a free, open-source discord bot that downloads videos and images from social media and converts them to gifs — right inside your server. no ads to click through, no reposting to sketchy sites: paste a link or drop a file and get it back in the channel.
 
-## commands
+## what it does
 
-- `/download` - download from 20+ platforms: twitter/x, tiktok, instagram, youtube, reddit, twitch, imgur, and more
-- `/convert` - turn a video or image into a gif
-- `/optimize` - compress an existing gif
+- **[`/download`](/commands/download/)** — grab a video or image from 20+ platforms: twitter/x, tiktok, instagram, youtube, reddit, twitch, imgur, and more
+- **[`/convert`](/commands/convert/)** — turn any video or image into a gif, with trimming and quality presets
+- **[`/optimize`](/commands/optimize/)** — compress an existing gif to shrink its file size
 
-you can also right-click any message and use the context menu.
+you can also right-click any message and use the context menu. every download source can be turned on or off individually from the built-in web dashboard.
 
-every download source can be turned on or off individually from the built-in web dashboard.
+[**Add gronka to your server →**](https://discord.com/oauth2/authorize?client_id=1522194017692156046) or [browse all commands](/commands/).
 
 ## self-hosting
 

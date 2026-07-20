@@ -1,6 +1,8 @@
 main:
   - title: home
     url: /
+  - title: commands
+    url: /commands/
   - title: privacy
     url: /privacy/
   - title: terms
