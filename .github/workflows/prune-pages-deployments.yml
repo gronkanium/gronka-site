@@ -9,6 +9,15 @@ on:
     branches: [main]
   workflow_dispatch: {}
 
+# ponytail: a rapid run of pushes each queue their own 10-min-delayed run;
+# without this, they'd stack up and all fire independently. Since the job
+# always converges on "keep whatever's newest right now" anyway, only the
+# most recently queued run needs to survive — cancel any older, still-
+# sleeping run for the same ref the moment a newer push comes in.
+concurrency:
+  group: prune-pages-deployments-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   prune:
     runs-on: ubuntu-latest
