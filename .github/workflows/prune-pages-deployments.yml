@@ -1,0 +1,37 @@
+name: Prune old Cloudflare Pages deployments
+
+# ponytail: runs on a delay (not on push) so it never races Cloudflare's own
+# build for the commit that just landed — deleting a deployment that's still
+# being promoted to production would be bad. If deploys ever get slower than
+# 10 min, bump the sleep below.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+jobs:
+  prune:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait for Cloudflare Pages build to finish promoting
+        if: github.event_name == 'push'
+        run: sleep 600
+
+      - name: Keep only the current production deployment
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: 354e5da1a11298aba9593be4b08f795d
+        run: |
+          npx --yes wrangler pages deployment list --project-name=gronka > /tmp/deployments.txt
+          cat /tmp/deployments.txt
+          KEEP=$(grep -oE '[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}' /tmp/deployments.txt | head -1)
+          echo "Keeping: $KEEP"
+          for round in $(seq 1 15); do
+            ids=$(npx --yes wrangler pages deployment list --project-name=gronka 2>&1 \
+              | grep -oE '[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}' \
+              | grep -v "$KEEP" | sort -u)
+            [ -z "$ids" ] && { echo "Nothing left to prune."; break; }
+            for id in $ids; do
+              npx --yes wrangler pages deployment delete "$id" --project-name=gronka --force || true
+            done
+          done
