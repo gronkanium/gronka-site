@@ -31,16 +31,29 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: 354e5da1a11298aba9593be4b08f795d
         run: |
-          npx --yes wrangler pages deployment list --project-name=gronka > /tmp/deployments.txt
-          cat /tmp/deployments.txt
-          KEEP=$(grep -oE '[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}' /tmp/deployments.txt | head -1)
-          echo "Keeping: $KEEP"
+          # ponytail: wrangler's raw output is a wide ASCII table with
+          # dashboard URLs per row -- noisy in a CI log. Suppress it and
+          # print only what changed.
+          list_ids() {
+            npx --yes wrangler pages deployment list --project-name=gronka 2>/dev/null \
+              | grep -oE '[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}'
+          }
+
+          KEEP=$(list_ids | head -1)
+          echo "Keeping current deployment: $KEEP"
+
+          deleted=0
           for round in $(seq 1 15); do
-            ids=$(npx --yes wrangler pages deployment list --project-name=gronka 2>&1 \
-              | grep -oE '[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}' \
-              | grep -v "$KEEP" | sort -u)
-            [ -z "$ids" ] && { echo "Nothing left to prune."; break; }
+            ids=$(list_ids | grep -v "$KEEP" | sort -u)
+            [ -z "$ids" ] && break
             for id in $ids; do
-              npx --yes wrangler pages deployment delete "$id" --project-name=gronka --force || true
+              if npx --yes wrangler pages deployment delete "$id" --project-name=gronka --force >/dev/null 2>&1; then
+                deleted=$((deleted + 1))
+                echo "Deleted: $id"
+              else
+                echo "Failed to delete: $id"
+              fi
             done
           done
+
+          echo "Done -- pruned $deleted old deployment(s)."
