@@ -22,7 +22,8 @@ keywords: "discord, bot, gif, video, converter, social media, download, media, c
 
 # analytics / ads / heatmaps (production only; blank = disabled)
 # see _includes/tracking.html
-gtm_id: "GTM-PNKLQBTV"  # container for GA4, pixels, conversions
+gtm_id: "GTM-PNKLQBTV"  # container for pixels, conversions
+ga4_id: "G-PQX32Q8VMQ"  # Google Analytics 4 — visitor stats
 clarity_id: "xp6mutexk8"          # Microsoft Clarity heatmaps
 adsense_id: "ca-pub-4600565639002892"  # AdSense auto ads
 
