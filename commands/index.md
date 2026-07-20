@@ -9,4 +9,4 @@ permalink: /commands/
 
 gronka's slash commands. Click any command for usage, examples, and options.
 
-{%- include commands-list.html -%}
+{% include commands-list.html %}
