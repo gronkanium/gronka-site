@@ -21,9 +21,9 @@
                 <span style="color: #b0b0b0; margin: 0 0.5rem;">&middot;</span>
               {%- endif -%}
               {%- if item.external -%}
-                <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer" class="footer-link">{{ item.title | escape }}</a>
+                <a href="{{ item.url }}" id="nav-{{ item.title | slugify }}" target="_blank" rel="noopener noreferrer" class="footer-link">{{ item.title | escape }}</a>
               {%- else -%}
-                <a href="{{ item.url | relative_url }}" class="footer-link">{{ item.title | escape }}</a>
+                <a href="{{ item.url | relative_url }}" id="nav-{{ item.title | slugify }}" class="footer-link">{{ item.title | escape }}</a>
               {%- endif -%}
             {%- endfor -%}
           {%- else -%}
