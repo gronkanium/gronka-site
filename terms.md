@@ -7,7 +7,7 @@ permalink: /terms/
 
 # Terms of Use
 
-**Last Updated:** July 7, 2026
+**Last Updated:** July 24, 2026
 
 ## Agreement to Terms
 
@@ -89,6 +89,16 @@ we provide this service "as-is" with no warranties of any kind. this means:
 - we may modify or discontinue the service at any time
 
 we're not liable for any damages, data loss, or issues arising from your use of the service.
+
+## Indemnification
+
+you agree to indemnify, defend, and hold gronka and its operator harmless from any claims, damages, losses, or expenses (including reasonable legal fees) arising from:
+
+- content you submit, convert, or download through the service
+- your violation of these terms
+- your violation of any law or third-party right, including copyright, publicity, or privacy rights
+
+this applies even after you stop using the service.
 
 ## Third-Party Services
 
