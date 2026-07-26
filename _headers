@@ -1,0 +1,17 @@
+# Cloudflare Pages header rules. Jekyll would skip a leading-underscore file, so
+# `_headers` is listed under `include:` in _config.yml to get it copied into _site.
+#
+# RFC 8288 Link headers let a client discover the sitemap and the llms.txt summary
+# without parsing HTML — which is the point for anything that fetches with HEAD or
+# doesn't run a parser at all.
+#
+# The root rule repeats the sitemap link rather than relying on it being inherited
+# from /*: Cloudflare merges matching rules, and a same-named header from a more
+# specific rule can replace rather than append. Spelling both out on / makes the
+# result the same either way. RFC 8288 permits multiple comma-separated values.
+
+/*
+  Link: </sitemap.xml>; rel="sitemap"; type="application/xml"
+
+/
+  Link: </sitemap.xml>; rel="sitemap"; type="application/xml", </llms.txt>; rel="alternate"; type="text/plain"

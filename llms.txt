@@ -1,0 +1,38 @@
+---
+permalink: /llms.txt
+sitemap: false
+---
+# gronka
+
+> {{ site.description }}
+
+gronka is a Discord bot. It downloads videos and images from social media links and
+converts video or image files into GIFs, posting the result back into the channel it was
+invoked from. It is free, open source (MIT), and can be self-hosted with Docker. Server
+admins can enable or disable each download source individually from a built-in web
+dashboard.
+
+Invite link: {{ site.discord_invite }}
+Source: https://github.com/thedorekaczynski/gronka
+
+## Commands
+{% for command in site.data.commands %}
+- [/{{ command.name }}]({{ site.url }}/commands/{{ command.name }}/): {{ command.description }}. Usage: `{{ command.usage }}`
+{%- endfor %}
+
+## Pages
+
+- [Home]({{ site.url }}/): what the bot does, and Docker self-hosting instructions.
+- [Commands]({{ site.url }}/commands/): index of every slash command.
+- [Donate]({{ site.url }}/donate/): how to support the project.
+- [Privacy policy]({{ site.url }}/privacy/): what the bot stores and for how long.
+- [Terms of use]({{ site.url }}/terms/): terms covering use of the hosted instance.
+
+## Notes
+
+- Every command is also reachable from Discord's right-click message context menu.
+- `/download` supports 20+ sources, including Twitter/X, TikTok, Instagram, Reddit,
+  YouTube, Twitch clips, Bluesky, Facebook, Snapchat, Tumblr, Kick, Rumble, Bilibili,
+  Dailymotion, Streamable, Imgur, SoundCloud, Coub, Newgrounds and Xiaohongshu.
+- Media is processed with cobalt, yt-dlp, ffmpeg, gifsicle and ImageMagick.
+- Files too large to attach to a Discord message are hosted and returned as a link.
