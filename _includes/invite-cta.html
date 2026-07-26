@@ -1,12 +1,13 @@
 {%- comment -%}
-  Shared end-of-page invite block. Carries `.cta-invite` so the existing GTM click trigger
+  Shared end-of-page invite bar. Carries `.cta-invite` so the existing GTM click trigger
   covers it alongside the two homepage links, plus a distinct id for drill-down.
+  Deliberately a single slim row, not a hero block — it sits under the page's real content
+  and should not outweigh it.
   Params: id (required, unique per placement), blurb (optional override).
 {%- endcomment -%}
 <aside class="invite-cta">
-  <h2>add gronka to your server</h2>
-  <p>
-    {{ include.blurb | default: "free and open source, no ads and no reposting to sketchy sites. paste a link, get the file back in the channel." }}
+  <p class="invite-cta-text">
+    {{ include.blurb | default: "add gronka to your server — free, open source, no ads." }}
   </p>
   <a
     href="{{ site.discord_invite }}"
@@ -14,7 +15,4 @@
     class="cta-invite invite-cta-button"
     >Add to Discord</a
   >
-  <p class="invite-cta-sub">
-    or <a href="{{ '/commands/' | relative_url }}">browse all commands</a>
-  </p>
 </aside>
