@@ -6,7 +6,7 @@ image: /assets/og-image.png
 
 # gronka
 
-<a href="https://discord.com/oauth2/authorize?client_id=1522194017692156046" id="invite-badge" class="cta-invite"><img src="https://img.shields.io/badge/Add_to_Discord-5865F2?logo=discord&logoColor=white" alt="Add to Discord" height="20"></a>
+<a href="{{ site.discord_invite }}" id="invite-badge" class="cta-invite"><img src="https://img.shields.io/badge/Add_to_Discord-5865F2?logo=discord&logoColor=white" alt="Add gronka to Discord" height="20"></a>
 <a href="https://github.com/thedorekaczynski/gronka"><img src="https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white" alt="GitHub" height="20"></a>
 
 gronka is a free, open-source discord bot that downloads videos and images from social media and converts them to gifs — right inside your server. no ads to click through, no reposting to sketchy sites: paste a link or drop a file and get it back in the channel.
@@ -19,7 +19,7 @@ gronka is a free, open-source discord bot that downloads videos and images from 
 
 you can also right-click any message and use the context menu. every download source can be turned on or off individually from the built-in web dashboard.
 
-[**Add gronka to your server →**](https://discord.com/oauth2/authorize?client_id=1522194017692156046){: #invite-cta .cta-invite} or [browse all commands](/commands/).
+[**Add gronka to your server →**]({{ site.discord_invite }}){: #invite-cta .cta-invite} or [browse all commands](/commands/).
 
 ## self-hosting
 

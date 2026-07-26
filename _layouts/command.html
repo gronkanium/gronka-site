@@ -6,6 +6,20 @@
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
         <article class="post">
+          {%- comment -%}
+            The site has no topbar (header.html is intentionally empty), so without this
+            the browser back button is the only way off a command page.
+          {%- endcomment -%}
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="{{ "/" | relative_url }}">gronka</a>
+            <span class="breadcrumb-separator" aria-hidden="true">/</span>
+            <a href="{{ "/commands/" | relative_url }}">commands</a>
+            {%- if page.command_data -%}
+              <span class="breadcrumb-separator" aria-hidden="true">/</span>
+              <span aria-current="page"><code>/{{ page.command_data }}</code></span>
+            {%- endif -%}
+          </nav>
+
           <header class="post-header">
             <h1 class="post-title">{{ page.title | escape }}</h1>
             {%- if page.description -%}
@@ -23,6 +37,9 @@
               {%- include command-card.html command=cmd -%}
             {%- endif -%}
           {%- endif -%}
+
+          {%- include invite-cta.html id="invite-command" -%}
+          {%- include command-related.html current=page.command_data -%}
         </article>
       </div>
     </main>

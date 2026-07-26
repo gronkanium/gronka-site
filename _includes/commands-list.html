@@ -7,7 +7,9 @@
     </h2>
     <p>{{ command.description }}</p>
     <p class="command-usage"><code>{{ command.usage }}</code></p>
-    <a href="{{ '/commands/' | append: command.name | relative_url }}">view details</a>
+    <a href="{{ '/commands/' | append: command.name | append: '/' | relative_url }}"
+      >view details<span class="visually-hidden"> for /{{ command.name }}</span></a
+    >
   </div>
   {%- endfor -%}
 </div>

@@ -20,6 +20,10 @@ image: /assets/og-image.png
 # Additional SEO metadata
 keywords: "discord, bot, gif, video, converter, social media, download, media, conversion"
 
+# Single source of truth for the invite link. GTM triggers match on "Click URL contains
+# discord.com/oauth2/authorize", so this string must not change shape.
+discord_invite: "https://discord.com/oauth2/authorize?client_id=1522194017692156046"
+
 # analytics / ads / heatmaps (production only; blank = disabled)
 # see _includes/tracking.html
 gtm_id: "GTM-PNKLQBTV"  # container for pixels, conversions

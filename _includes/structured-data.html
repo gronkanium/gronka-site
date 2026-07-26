@@ -1,3 +1,26 @@
+{%- comment -%}
+  JSON-LD blocks. Homepage gets SoftwareApplication; command pages get TechArticle; every
+  page gets a BreadcrumbList.
+
+  Note: no FAQPage/HowTo here on purpose — Google retired both rich result types for
+  general sites, so the markup would add weight without ever rendering.
+{%- endcomment -%}
+
+{%- assign page_url = site.url | append: site.baseurl | append: page.url -%}
+{%- if page.image -%}
+  {%- if page.image contains '://' -%}
+    {%- assign social_image = page.image -%}
+  {%- else -%}
+    {%- assign social_image = site.url | append: site.baseurl | append: page.image -%}
+  {%- endif -%}
+{%- elsif site.image -%}
+  {%- if site.image contains '://' -%}
+    {%- assign social_image = site.image -%}
+  {%- else -%}
+    {%- assign social_image = site.url | append: site.baseurl | append: site.image -%}
+  {%- endif -%}
+{%- endif -%}
+
 {%- if page.url == '/' or page.url == '/index.html' -%}
 <script type="application/ld+json">
   {
@@ -6,8 +29,11 @@
     "name": "{{ site.title | escape }}",
     "alternateName": ["gronka bot", "gronka discord bot"],
     "description": "{{ site.description | escape }}",
-    "applicationCategory": "Discord Bot",
+    "applicationCategory": "MultimediaApplication",
+    "applicationSubCategory": "Discord Bot",
     "operatingSystem": "Discord",
+    "isAccessibleForFree": true,
+    "license": "https://opensource.org/licenses/MIT",
     "offers": {
       "@type": "Offer",
       "price": "0",
@@ -17,18 +43,24 @@
       "@type": "Organization",
       "name": "{{ site.author | default: site.title | escape }}"
     },
-    "url": "{{ site.url }}{{ site.baseurl }}{{ page.url }}",
+    "url": "{{ page_url }}",
     "sameAs": ["https://github.com/thedorekaczynski/gronka"]
+    {%- if social_image -%}
+    ,"screenshot": "{{ social_image }}"
+    {%- endif -%}
   }
 </script>
-{%- endif -%} {%- if page.layout == 'doc' -%}
+{%- endif -%}
+
+{%- if page.layout == 'command' -%}
 <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "TechArticle",
     "headline": "{{ page.title | escape }}",
     "description": "{{ page.description | default: page.excerpt | default: site.description | strip_html | strip_newlines | truncate: 160 | escape }}",
-    "url": "{{ site.url }}{{ site.baseurl }}{{ page.url }}",
+    "url": "{{ page_url }}",
+    "inLanguage": "{{ page.lang | default: site.lang | default: 'en' }}",
     "author": {
       "@type": "Organization",
       "name": "{{ site.author | default: site.title | escape }}"
@@ -36,35 +68,30 @@
     "publisher": {
       "@type": "Organization",
       "name": "{{ site.title | escape }}",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "{%- if site.image contains '://' -%}{{ site.image }}{%- else -%}{{ site.url }}{{ site.baseurl }}{{ site.image | default: '/assets/favicon.png' }}{%- endif -%}"
-      }
+      "url": "{{ site.url }}{{ site.baseurl }}/"
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "{{ site.url }}{{ site.baseurl }}{{ page.url }}"
+      "@id": "{{ page_url }}"
+    },
+    "about": {
+      "@type": "SoftwareApplication",
+      "name": "{{ site.title | escape }}",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Discord",
+      "url": "{{ site.url }}{{ site.baseurl }}/"
     }
-    {%- if page.image -%}
-      {%- if page.image contains '://' -%}
-    ,"image": "{{ page.image }}"
-      {%- else -%}
-    ,"image": "{{ site.url }}{{ site.baseurl }}{{ page.image }}"
-      {%- endif -%}
-    {%- elsif site.image -%}
-      {%- if site.image contains '://' -%}
-    ,"image": "{{ site.image }}"
-      {%- else -%}
-    ,"image": "{{ site.url }}{{ site.baseurl }}{{ site.image }}"
-      {%- endif -%}
+    {%- if social_image -%}
+    ,"image": "{{ social_image }}"
     {%- endif -%}
   }
 </script>
-{%- endif -%} {%- comment -%} BreadcrumbList for navigation {%- endcomment -%} {%- assign
-breadcrumbs = "" | split: "," -%} {%- assign breadcrumb = site.url | append: site.baseurl -%} {%-
-assign breadcrumbs = breadcrumbs | push: breadcrumb -%} {%- if page.url != '/' and page.url !=
-'/index.html' -%} {%- assign breadcrumb = site.url | append: site.baseurl | append: page.url -%} {%-
-assign breadcrumbs = breadcrumbs | push: breadcrumb -%} {%- endif -%}
+{%- endif -%}
+
+{%- comment -%}
+  Breadcrumbs. Command pages sit under /commands/, so they get the middle level; the label
+  is the command name rather than the long SEO title, which is what Google renders.
+{%- endcomment -%}
 <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -75,13 +102,28 @@ assign breadcrumbs = breadcrumbs | push: breadcrumb -%} {%- endif -%}
         "position": 1,
         "name": "{{ site.title | escape }}",
         "item": "{{ site.url }}{{ site.baseurl }}/"
-      }{%- if page.url != '/' and page.url != '/index.html' -%},
+      }
+      {%- if page.layout == 'command' -%},
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "commands",
+        "item": "{{ site.url }}{{ site.baseurl }}/commands/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "/{{ page.command_data | default: page.title | escape }}",
+        "item": "{{ page_url }}"
+      }
+      {%- elsif page.url != '/' and page.url != '/index.html' -%},
       {
         "@type": "ListItem",
         "position": 2,
         "name": "{{ page.title | default: page.name | escape }}",
-        "item": "{{ site.url }}{{ site.baseurl }}{{ page.url }}"
-      }{%- endif -%}
+        "item": "{{ page_url }}"
+      }
+      {%- endif -%}
     ]
   }
 </script>

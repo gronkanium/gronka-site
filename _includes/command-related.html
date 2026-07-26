@@ -1,0 +1,21 @@
+{%- comment -%}
+  Cross-links to every other command. Gives command pages an onward path instead of
+  dead-ending, and gives crawlers sibling links between the command cluster.
+  Params: current (command name to omit).
+{%- endcomment -%}
+{%- assign others = site.data.commands | where_exp: "cmd", "cmd.name != include.current" -%}
+{%- if others.size > 0 -%}
+<nav class="command-related" aria-labelledby="command-related-heading">
+  <h2 id="command-related-heading">other commands</h2>
+  <ul>
+    {%- for cmd in others -%}
+    <li>
+      <a href="{{ '/commands/' | append: cmd.name | append: '/' | relative_url }}"
+        ><code>/{{ cmd.name }}</code></a
+      >
+      <span class="command-related-description">{{ cmd.description }}</span>
+    </li>
+    {%- endfor -%}
+  </ul>
+</nav>
+{%- endif -%}
