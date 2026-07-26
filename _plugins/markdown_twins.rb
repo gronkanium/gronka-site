@@ -30,26 +30,30 @@ Jekyll::Hooks.register :site, :post_write do |site|
     source_path = site.in_source_dir(page.path)
     next unless File.exist?(source_path)
 
-    body = File.read(source_path).sub(FRONT_MATTER, '').strip
-
+    # A twin is a nice-to-have; never let one take the build down with it.
     begin
+      # Read and write UTF-8 explicitly rather than inheriting the default external
+      # encoding. Cloudflare's build image has no locale set, so that default is
+      # US-ASCII there, and every em dash in these pages raises "invalid byte
+      # sequence" the moment a regex touches the string.
+      body = File.read(source_path, encoding: 'UTF-8').sub(FRONT_MATTER, '').strip
+
       # page data has to be in scope so a body referencing page.* renders the same
       # way it does in the HTML build.
       body = Liquid::Template
              .parse(body)
              .render(payload.merge('page' => page.to_liquid))
+
+      # Command pages carry their <h1> in the layout rather than the body, so without
+      # this the twin would open mid-sentence with no title.
+      title = page.data['title']
+      body = "# #{title}\n\n#{body}" if title && !body.start_with?('#')
+
+      File.write(destination.sub(/\.html\z/, '.md'), "#{body}\n", encoding: 'UTF-8')
+      written += 1
     rescue StandardError => e
-      Jekyll.logger.warn 'MarkdownTwins:', "Liquid failed for #{page.path}: #{e.message}"
-      next
+      Jekyll.logger.warn 'MarkdownTwins:', "skipped #{page.path}: #{e.class}: #{e.message}"
     end
-
-    # Command pages carry their <h1> in the layout rather than the body, so without
-    # this the twin would open mid-sentence with no title.
-    title = page.data['title']
-    body = "# #{title}\n\n#{body}" if title && !body.start_with?('#')
-
-    File.write(destination.sub(/\.html\z/, '.md'), "#{body}\n")
-    written += 1
   end
 
   Jekyll.logger.info 'MarkdownTwins:', "wrote #{written} markdown twins"
