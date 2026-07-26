@@ -37,3 +37,6 @@ logs/
 # Claude Code
 CLAUDE.md
 .claude/
+
+# wrangler pages dev scratch state
+.wrangler/

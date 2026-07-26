@@ -56,4 +56,11 @@ exclude:
   - package-lock.json
   - .git
   - .gitignore
+  # Cloudflare compiles Pages Functions from the repo root, not from the build
+  # output, so copying this into _site would only publish the source.
+  - functions
+  # Local-only AI instructions (gitignored, so Cloudflare never sees it) -- excluded
+  # as well so it cannot be published by a direct upload of a local _site.
+  - CLAUDE.md
+  - .claude
 
