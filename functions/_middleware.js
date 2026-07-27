@@ -10,6 +10,17 @@
 
 const MARKDOWN_TYPE = "text/markdown";
 
+// Cloudflare gives every Pages project a permanent *.pages.dev alias, and it serves the
+// same build as the custom domain. Analytics caught real traffic (and Google/Bing
+// referrals) landing on it, which splits ranking signal across two hostnames for
+// identical content. jekyll-seo-tag already emits a gronka.dev canonical, but a canonical
+// is a hint -- the 301 is the part crawlers must honour.
+//
+// Only the production alias is redirected. Preview deployments are <hash>.gronka-site.pages.dev
+// and have to keep serving themselves, or there is no way to test a branch before it ships.
+const CANONICAL_HOST = "gronka.dev";
+const ALIAS_HOSTS = new Set(["gronka-site.pages.dev", "www.gronka.dev"]);
+
 /** Path of the .md twin for a page request, or null if this isn't a page request. */
 function twinPath(pathname) {
   if (pathname.endsWith("/")) {
@@ -27,6 +38,14 @@ function twinPath(pathname) {
 export async function onRequest(context) {
   const { request, next, env } = context;
 
+  // Ahead of the markdown negotiation below, and deliberately not limited to page GETs:
+  // an alias must not serve assets or accept writes either.
+  const url = new URL(request.url);
+  if (ALIAS_HOSTS.has(url.hostname)) {
+    url.hostname = CANONICAL_HOST;
+    return Response.redirect(url.toString(), 301);
+  }
+
   if (request.method !== "GET" && request.method !== "HEAD") {
     return next();
   }
@@ -34,7 +53,7 @@ export async function onRequest(context) {
   const accept = request.headers.get("Accept") || "";
   const wantsMarkdown = accept.toLowerCase().includes(MARKDOWN_TYPE);
 
-  const target = twinPath(new URL(request.url).pathname);
+  const target = twinPath(url.pathname);
   if (!target) {
     return next();
   }
