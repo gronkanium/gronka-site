@@ -4,6 +4,7 @@
   "description": "Jekyll documentation site for Gronka Discord bot",
   "type": "module",
   "scripts": {
+    "prepare": "husky",
     "jekyll:build": "bundle exec jekyll build",
     "jekyll:serve": "bundle exec jekyll serve",
     "indexnow": "bun scripts/indexnow.js",
@@ -11,5 +12,8 @@
     "stats:clarity": "bun scripts/clarity.js"
   },
   "author": "thedorekaczynski",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "husky": "^9.1.7"
+  }
 }
