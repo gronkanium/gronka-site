@@ -14,8 +14,14 @@ title_separator: ""
 
 # Open Graph and social sharing image
 # Use a static image URL for better caching and SEO
-# Recommended size: 1200x630px for Open Graph
-image: /assets/og-image.png
+# width/height are required so link-preview clients (iMessage, Discord, etc.) know the
+# aspect ratio up front instead of guessing and center-cropping to a square, which was
+# cutting off the left/right edges of the text in the image.
+image:
+  path: /assets/og-image.png
+  width: 1200
+  height: 630
+  alt: "gronka — downloads social media, makes gifs"
 
 # Additional SEO metadata
 keywords: "discord, bot, gif, video, converter, social media, download, media, conversion"
