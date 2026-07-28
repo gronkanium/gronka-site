@@ -12,9 +12,9 @@ command_data: info
 
 `/info` takes no options. Run it anywhere gronka can post and it replies with an embed covering:
 
-- **host information** — platform, architecture, CPU count, and memory used against total.
-- **storage** — how much object storage the bot is using, how much is free, the configured limit, and how old the cached figure is. Reads `not configured` on instances running without object storage.
-- **runtime information** — Node.js version, how long the process has been up, and the bot version.
+- **usage** — how long the bot has been up, how many servers it's in, and how many unique people have used it.
+- **storage** — how many GIFs, videos, and images are stored and the disk they occupy, plus object storage used against its limit and how old the cached figure is. Reads `not configured` on instances running without object storage.
+- **system** — platform and architecture, CPU count, memory used against total, and the Bun and gronka versions.
 
 ## when it's useful
 

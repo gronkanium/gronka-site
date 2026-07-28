@@ -104,7 +104,7 @@
 
 - name: info
   type: slash
-  description: view bot statistics, system information, and gif storage/cache usage
+  description: view usage, storage, and system information in one embed
   usage: '/info'
   examples:
     - '/info'
