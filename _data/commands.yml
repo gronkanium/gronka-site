@@ -1,6 +1,6 @@
 - name: convert
   type: slash
-  description: convert a video (max 100mb) or image (max 50mb) to gif
+  description: convert a video or image to a gif
   usage: '/convert [file|url] [quality] [optimize] [lossy] [start_time] [end_time]'
   examples:
     - '/convert file:[attachment]'
@@ -13,11 +13,11 @@
   options:
     - name: file
       type: attachment
-      description: the video (max 100mb) or image (max 50mb) file to convert
+      description: the video or image file to convert to a gif
       required: false
     - name: url
       type: string
-      description: url to a video or image file to convert
+      description: url to a video or image to download and convert to a gif
       required: false
     - name: quality
       type: string
@@ -35,22 +35,20 @@
       min: 0
       max: 100
     - name: start_time
-      type: number
-      description: start time in seconds for trimming (videos only, ignored for images)
+      type: string
+      description: 'start time for trimming, in seconds or as a timestamp (e.g. 90 or 1:30) (videos only)'
       required: false
-      min: 0
     - name: end_time
-      type: number
-      description: end time in seconds for trimming (videos only, ignored for images)
+      type: string
+      description: 'end time for trimming, in seconds or as a timestamp (e.g. 90 or 1:30) (videos only)'
       required: false
-      min: 0
   supported_formats:
     video: [mp4, mov, webm, avi, mkv]
     image: [png, jpg, jpeg, webp, gif]
 
 - name: optimize
   type: slash
-  description: optimize a gif file (max 50mb) to reduce its size
+  description: optimize a gif to reduce its file size
   usage: '/optimize [file|url] [lossy]'
   examples:
     - '/optimize file:[attachment]'
@@ -60,11 +58,11 @@
   options:
     - name: file
       type: attachment
-      description: the gif file to optimize (max 50mb)
+      description: the gif file to optimize
       required: false
     - name: url
       type: string
-      description: url to a gif file to optimize (max 50mb)
+      description: url to a gif to optimize
       required: false
     - name: lossy
       type: number
@@ -96,15 +94,13 @@
       description: url to a video or image to download
       required: true
     - name: start_time
-      type: number
-      description: start time in seconds for trimming the downloaded video
+      type: string
+      description: 'start time for video trimming, in seconds or as a timestamp (e.g. 90 or 1:30)'
       required: false
-      min: 0
     - name: end_time
-      type: number
-      description: end time in seconds for trimming the downloaded video
+      type: string
+      description: 'end time for video trimming, in seconds or as a timestamp (e.g. 90 or 1:30)'
       required: false
-      min: 0
 
 - name: info
   type: slash

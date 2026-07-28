@@ -29,16 +29,10 @@ docker is the supported way to run gronka (the image includes ffmpeg, gifsicle, 
 git clone https://github.com/thedorekaczynski/gronka.git
 cd gronka
 cp .env.example .env
-```
-
-add your `DISCORD_TOKEN` and `CLIENT_ID` to `.env`, then:
-
-```bash
 docker compose up -d
-docker compose run --rm app npm run register-commands
 ```
 
-check `.env.example` for all options.
+set `PROD_DISCORD_TOKEN` and `PROD_CLIENT_ID` in `.env` before starting — see `.env.example` for all options.
 
 ## license
 
