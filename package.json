@@ -4,7 +4,7 @@
   "description": "Jekyll documentation site for Gronka Discord bot",
   "type": "module",
   "scripts": {
-    "prepare": "husky",
+    "prepare": "husky || true",
     "jekyll:build": "bundle exec jekyll build",
     "jekyll:serve": "bundle exec jekyll serve",
     "indexnow": "bun scripts/indexnow.js",
