@@ -30,6 +30,13 @@ keywords: "discord, bot, gif, video, converter, social media, download, media, c
 # discord.com/oauth2/authorize", so this string must not change shape.
 discord_invite: "https://discord.com/oauth2/authorize?client_id=1522194017692156046"
 
+# Donation address shown on /donate/. This is the copy visitors are pointed at to verify
+# against, so it is deliberately here rather than buried in the page markup.
+# IMPORTANT: the QR code in _includes/xmr-qr.svg encodes this string and is *not*
+# generated from it -- changing the address without regenerating that SVG would send
+# scanners to the old wallet. See the comment in that file for how to rebuild it.
+monero_address: "88St6qWEsgXKYzjGCURq3UTJ99rqxYjHFHGumvKzBb2oP9nMn77Nteog49hHepNqZQL2P3xr2VPXHg8N4J2XHWAr6WNpnZM"
+
 # analytics / ads / heatmaps (production only; blank = disabled)
 # see _includes/tracking.html
 gtm_id: "GTM-PNKLQBTV"  # container for pixels, conversions
