@@ -1,6 +1,9 @@
 {%- comment -%}
-  Shared end-of-page invite bar. Carries `.cta-invite` so the existing GTM click trigger
-  covers it alongside the two homepage links, plus a distinct id for drill-down.
+  Shared end-of-page invite bar. Tracking keys off the href, not this markup: GA4 enhanced
+  measurement logs the outbound click, and a create-event rule turns any link_url containing
+  oauth2/authorize into the `invite_click` key event — so placements are covered as soon as
+  they exist. The id survives into that event and is what separates placements in reports.
+  `.cta-invite` is unstyled and unused by the current setup; it stays only as a GTM selector.
   Deliberately a single slim row, not a hero block — it sits under the page's real content
   and should not outweigh it.
   Params: id (required, unique per placement), blurb (optional override).
