@@ -30,6 +30,11 @@ keywords: "discord, bot, gif, video, converter, social media, download, media, c
 # discord.com/oauth2/authorize", so this string must not change shape.
 discord_invite: "https://discord.com/oauth2/authorize?client_id=1522194017692156046"
 
+# Support server, distinct from the install link above. Deliberately a discord.gg URL so it
+# does NOT match the GTM invite_click trigger — joining the server is not a bot install and
+# must not inflate that conversion.
+discord_server: "https://discord.gg/5Z4hEeHshH"
+
 # analytics / ads / heatmaps (production only; blank = disabled)
 # see _includes/tracking.html
 gtm_id: "GTM-PNKLQBTV"  # container for pixels, conversions
