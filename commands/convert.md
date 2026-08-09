@@ -31,7 +31,9 @@ if the gif still comes out bigger than you want, set `optimize:true` to run it t
 
 ## trimming
 
-`start_time` and `end_time` are in seconds and apply to videos only — they're ignored for images. `/convert file:[attachment] start_time:30 end_time:60` gives you a gif of just that thirty-second stretch, which is usually the difference between a gif that fits in the channel and one that doesn't.
+`start_time` and `end_time` apply to videos only — they're ignored for images. `/convert file:[attachment] start_time:30 end_time:60` gives you a gif of just that thirty-second stretch, which is usually the difference between a gif that fits in the channel and one that doesn't.
+
+either one takes plain seconds or a timestamp: `start_time:90` and `start_time:1:30` are the same, and `1:02:30` works for longer sources. no converting minutes by hand.
 
 ## supported formats
 

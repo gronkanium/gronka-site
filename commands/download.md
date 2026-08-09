@@ -58,10 +58,20 @@ you can skip the command entirely: right-click (or long-press on mobile) any mes
 
 a handful of adult and image-board sources are supported too. they ship disabled-friendly — like every other source, an admin can switch them off from the dashboard.
 
+## link formats
+
+paste whatever the share button gave you. in particular:
+
+- **short links resolve** — `vm.tiktok.com`, `redd.it`, `dai.ly` and `fb.watch` work the same as their full forms.
+- **twitter.com and x.com are both matched**, so an old link from before the rename needs no editing.
+- **Twitch means clips** — `twitch.tv/<channel>/clip/<slug>` and `clips.twitch.tv`. a link to a full stream or VOD isn't a clip and will come back with an error rather than a file.
+
 ## trimming while you download
 
-`start_time` and `end_time` take seconds, and cut the video before it's posted. `/download url:… start_time:30 end_time:60` gives you just that thirty-second stretch, which is usually the difference between a clip that fits in the channel and one that doesn't.
+`start_time` and `end_time` cut the video before it's posted. `/download url:… start_time:30 end_time:60` gives you just that thirty-second stretch, which is usually the difference between a clip that fits in the channel and one that doesn't.
+
+both take either plain seconds or a timestamp, so `start_time:90` and `start_time:1:30` mean the same thing, and `1:02:30` works for anything over an hour. you don't have to convert minutes in your head.
 
 ## what you get back
 
-gronka posts the original file as a normal Discord attachment whenever it fits. anything past your server's upload limit gets hosted and posted as a link instead of failing quietly, and admins can set their own size cap from the dashboard. downloaded videos can be piped straight into [`/convert`](/commands/convert/) if you want a gif out of them.
+gronka posts the original file as a normal Discord attachment whenever it fits. anything past your server's upload limit gets hosted and posted as a link instead of failing quietly, and admins can set their own size cap from the dashboard. those hosted links are temporary, and larger files are kept for less time than smaller ones — treat one as a way to share something now, not as somewhere to keep it. downloaded videos can be piped straight into [`/convert`](/commands/convert/) if you want a gif out of them.
