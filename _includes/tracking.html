@@ -1,12 +1,10 @@
 {%- comment -%}
-  Analytics / ads / heatmaps. Each block emits only when its id is set in
+  Analytics / heatmaps. Each block emits only when its id is set in
   _config.yml (ids only ever live in the deployed config, so blank = off).
 
   - GTM   : one container for everything else (GA4, Meta/TikTok/Reddit pixels,
             conversion tags...). Add those from the GTM web dashboard — no code.
   - Clarity: Microsoft Clarity heatmaps + session recordings (free, no cap).
-  - AdSense: auto ads. Enable "Auto ads" + the consent/Privacy-&-messaging CMP
-            in the AdSense dashboard; the loader below is all the code needed.
 
   ponytail: no jekyll.environment gate — Cloudflare Pages builds Jekyll in
   'development' mode, which would suppress these. Gated on the id alone; blank
@@ -14,7 +12,7 @@
   also loads them — fine for this site.)
 
   ponytail: GTM <noscript> fallback iframe skipped — needs a body-level layout
-  override for ~no real coverage (no-JS users don't see ads/analytics anyway).
+  override for ~no real coverage (no-JS users don't see analytics anyway).
 {%- endcomment -%}
 {%- if site.gtm_id and site.gtm_id != '' -%}
 <!-- Google Tag Manager -->
@@ -28,8 +26,4 @@
 {%- if site.clarity_id and site.clarity_id != '' -%}
 <!-- Microsoft Clarity (heatmaps) -->
 <script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","{{ site.clarity_id }}");</script>
-{%- endif -%}
-{%- if site.adsense_id and site.adsense_id != '' -%}
-<!-- Google AdSense (auto ads) -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ site.adsense_id }}" crossorigin="anonymous"></script>
 {%- endif -%}

@@ -10,7 +10,7 @@ permalink: /donate/
 
 # donate
 
-gronka is free. no ads, no tracking, no premium tiers, no paywalled features.
+gronka is free. no ads, no ad tracking, no premium tiers, no paywalled features.
 
 if you use gronka and want to show some appreciation, donations help keep me motivated to add new features and keep things running smooth.
 

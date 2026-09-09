@@ -35,16 +35,11 @@ discord_invite: "https://discord.com/oauth2/authorize?client_id=1522194017692156
 # must not inflate that conversion.
 discord_server: "https://discord.gg/5Z4hEeHshH"
 
-# analytics / ads / heatmaps (production only; blank = disabled)
+# analytics / heatmaps (production only; blank = disabled)
 # see _includes/tracking.html
 gtm_id: "GTM-PNKLQBTV"  # container for pixels, conversions
 ga4_id: "G-PQX32Q8VMQ"  # Google Analytics 4 — visitor stats
 clarity_id: "xp6mutexk8"          # Microsoft Clarity heatmaps
-# AdSense auto ads — off since 2026-08-08. At ~74 pageviews/quarter the revenue rounds to
-# nothing, while the loader cost every visitor a third-party script and a consent prompt on
-# the way to the invite button. Restore the id (ca-pub-4600565639002892) to switch back on;
-# the account and ads.txt are untouched, so it needs no re-approval.
-adsense_id: ""
 
 # build settings
 markdown: kramdown

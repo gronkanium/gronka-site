@@ -1,7 +1,7 @@
 // GA4 traffic report. Run with `bun run stats:ga4` (Bun loads .env itself).
 //
-// Auth is a service-account JWT rather than OAuth: AdSense forces a browser consent flow,
-// but the Analytics Data API accepts a signed assertion, so this stays non-interactive.
+// Auth is a service-account JWT rather than OAuth: the Analytics Data API accepts a signed
+// assertion, so this stays non-interactive.
 // The key lives outside the repo (GA4_KEY_FILE) so no gitignore rule is load-bearing.
 
 import { createSign } from 'node:crypto';
