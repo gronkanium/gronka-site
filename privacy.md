@@ -7,11 +7,16 @@ permalink: /privacy/
 
 # Privacy Policy
 
-**Last Updated:** September 9, 2026
+**Last Updated:** September 14, 2026
 
 ## Introduction
 
-This privacy policy describes how gronka ("we", "our", or "the service") handles data when you use our Discord bot service. We are committed to protecting your privacy and being transparent about our data practices.
+This privacy policy describes how gronka ("we", "our", or "the service") handles data when you use our Discord bot service.
+
+Two things are worth stating up front, because they shape everything below:
+
+- **We do not collect or store your Discord username.** Only your numeric Discord user ID is stored. Nothing in the service needs a name, so none is kept.
+- **Nothing is retained indefinitely except a per-user tally.** Logs, operation records, URL records and cached media are all deleted automatically after **7 days**.
 
 ## Information We Collect
 
@@ -19,7 +24,7 @@ This privacy policy describes how gronka ("we", "our", or "the service") handles
 
 When you use gronka, we may receive the following information from Discord:
 
-- **User Information**: Your Discord user ID and username (as provided by Discord's API)
+- **User Information**: Your numeric Discord user ID. **Your username is not stored.** Discord's API supplies one; the bot discards it rather than writing it to disk.
 - **Message Content**: Video and image files you submit for conversion or optimization, and social media URLs you submit for download
 - **Command Usage**: Information about when and how you use bot commands
 
@@ -28,6 +33,8 @@ When you use gronka, we may receive the following information from Discord:
 - **File Hashes**: BLAKE3 hashes of processed files for deduplication purposes
 - **Usage Statistics**: User-specific metrics about bot usage (number of conversions, file sizes, command usage, etc.)
 - **Error Logs**: Technical information when errors occur (may include your Discord user ID and file metadata, but not file contents or message text)
+
+Log and operation messages written before September 14, 2026 may still contain usernames recorded under the previous policy. Those records are covered by the 7-day retention window and clear themselves; they are not rewritten.
 
 ## How We Use Your Information
 
@@ -44,16 +51,15 @@ We use the collected information to:
 
 ### File Storage
 
-- Converted GIFs and downloaded media files are stored on our servers
-- Files are identified by BLAKE3 hash
-- Files may be linked to user information through processing records for operational purposes
-- Files may be cached indefinitely for CDN performance
-- Some downloaded files served via the CDN are stored temporarily and deleted automatically after a set period
+- Converted GIFs and downloaded media files are cached on our servers and **deleted automatically after 7 days**
+- Files are identified by BLAKE3 hash, which is also how duplicate work is avoided
+- Processing records link a file to a Discord user ID; those records are **deleted automatically after 7 days**
+- Files served via the CDN expire sooner, on a schedule based on size: roughly 72 hours for files under 100 MB, down to about 2 hours for the largest. Once expired they are removed from CDN storage
 
 ### Logs
 
 - Server logs may contain Discord user IDs for operational purposes
-- Logs are retained for troubleshooting and may be kept indefinitely unless manually deleted
+- Logs are **deleted automatically after 7 days**
 - Error logs do not contain file contents or personal messages
 
 ## Data Sharing
@@ -68,9 +74,9 @@ We do not sell, trade, or rent your personal information to third parties. We ma
 
 You have the right to:
 
-- **Access**: Request information about what data we have about you
-- **Deletion**: Request deletion of your data (subject to technical limitations)
-- **Opt-Out**: Stop using the bot at any time
+- **Access**: Request information about what data we have about you. In practice this is your user ID, your first and last use timestamps, and your command counters — everything else about you older than 7 days has already been deleted
+- **Deletion**: Request deletion of your data. Your per-user tally can be removed on request; everything else deletes itself within 7 days whether you ask or not
+- **Opt-Out**: Stop using the bot at any time. Doing nothing else, all of your data except the per-user tally is gone within 7 days
 
 To exercise these rights, contact us via email at gronkasupport@proton.me or through the [GitHub repository](https://github.com/thedorekaczynski/gronka).
 
@@ -124,12 +130,27 @@ When you use the download command, the URL you submit is fetched from the source
 
 ## Data Retention
 
-- **Media Files**: Retained indefinitely unless manually deleted, except temporary CDN uploads, which are deleted automatically after a set period
-- **Logs**: Retained indefinitely unless manually deleted
-- **Statistics**: User-specific statistics are retained indefinitely
-- **Processed URLs**: Records linking URLs to files and user IDs are retained indefinitely
-- **User Data**: User IDs, usernames, and usage timestamps are retained indefinitely
-- **Moderation Records**: If you are banned from the service, your user ID and the ban reason are retained indefinitely
+Deletion is automatic, on a job that runs every few hours. It is not a manual process and does not depend on anyone remembering to do it.
+
+**Deleted after 7 days:**
+
+- **Media Files**: cached GIFs, videos and images on our servers
+- **Logs**: server and error logs
+- **Operation Records**: per-command records of what was processed and whether it succeeded
+- **Processed URLs**: records linking a submitted URL to a resulting file and a user ID
+
+**Shorter than 7 days:**
+
+- **CDN Uploads**: expire on a size-based schedule, from about 72 hours down to about 2 hours for the largest files
+
+**Kept until you ask us to remove it:**
+
+- **Per-User Tally**: your Discord user ID, first and last use timestamps, and counters for how many commands you have run. This is what lets the bot report how many people use it. It contains no username, no URLs, and no file references
+- **Moderation Records**: if you are banned, your user ID and the ban reason
+
+**Never stored at all:**
+
+- **Usernames**: Discord provides one with every interaction; it is discarded rather than written to disk, and is not sent to our CDN provider or to notification services
 
 ## International Data Transfers
 
