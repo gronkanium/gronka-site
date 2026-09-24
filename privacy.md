@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Privacy Policy
-description: Privacy policy for the gronka Discord bot: what is stored, why, how long it is kept, and how to have it deleted.
+description: "Privacy policy for the gronka Discord bot: what is stored, why, how long it is kept, and how to have it deleted."
 permalink: /privacy/
 ---
 
