@@ -1,165 +1,64 @@
 ---
 layout: default
 title: Privacy Policy
-description: Privacy policy for gronka Discord bot. Learn how we handle your data, file storage, and privacy rights.
+description: Privacy policy for the gronka Discord bot: what is stored, why, how long it is kept, and how to have it deleted.
 permalink: /privacy/
 ---
 
 # Privacy Policy
 
-**Last Updated:** September 14, 2026
+**Last updated:** September 23, 2026
 
-## Introduction
+This policy covers the gronka Discord bot and the website at gronka.dev. It explains what is stored, why, how long it is kept, and how to have it deleted.
 
-This privacy policy describes how gronka ("we", "our", or "the service") handles data when you use our Discord bot service.
+## What we store
 
-Two things are worth stating up front, because they shape everything below:
+**Your Discord user ID.** A numeric ID that Discord assigns to your account. Everything below is filed under it.
 
-- **We do not collect or store your Discord username.** Only your numeric Discord user ID is stored. Nothing in the service needs a name, so none is kept.
-- **Nothing is retained indefinitely except a per-user tally.** Logs, operation records, URL records and cached media are all deleted automatically after **7 days**.
+**The media and links you submit.** Files you send to `/convert` or `/optimize`, and URLs you send to `/download`, along with the media retrieved for you.
 
-## Information We Collect
+**File hashes.** A BLAKE3 hash of each processed file, used to recognize a file we have already converted so the work is not repeated.
 
-### Data from Discord
+**Usage counts.** How many commands you have run, and the dates you first and last used the bot.
 
-When you use gronka, we may receive the following information from Discord:
+**Logs.** Server and error logs, which record file metadata and user IDs. They do not record file contents or the text of your messages.
 
-- **User Information**: Your numeric Discord user ID. **Your username is not stored.** Discord's API supplies one; the bot discards it rather than writing it to disk.
-- **Message Content**: Video and image files you submit for conversion or optimization, and social media URLs you submit for download
-- **Command Usage**: Information about when and how you use bot commands
+**Ban records.** If you are banned from the service, your user ID and the reason.
 
-### Automatically Collected Data
+## Why we store it
 
-- **File Hashes**: BLAKE3 hashes of processed files for deduplication purposes
-- **Usage Statistics**: User-specific metrics about bot usage (number of conversions, file sizes, command usage, etc.)
-- **Error Logs**: Technical information when errors occur (may include your Discord user ID and file metadata, but not file contents or message text)
+To carry out the commands you run, deliver the results, avoid repeating work already done, diagnose faults, enforce the terms of use, and report how many people use the bot. None of it is used for advertising or profiling.
 
-Log and operation messages written before September 14, 2026 may still contain usernames recorded under the previous policy. Those records are covered by the 7-day retention window and clear themselves; they are not rewritten.
+## How long we keep it
 
-## How We Use Your Information
+Cached media, logs, operation records and URL records are deleted seven days after they are written, by an automated job that runs every six hours.
 
-We use the collected information to:
+Files served over the CDN are removed sooner, within a few hours to a few days depending on file size.
 
-- Process and convert your video and image files to GIF format
-- Download media from social platforms at your request
-- Store converted and downloaded files and serve them via our CDN
-- Prevent duplicate processing of identical files
-- Monitor service health and diagnose technical issues
-- Generate usage statistics for service monitoring
+Usage counts are kept until you ask for them to be deleted. Ban records are kept until the ban is lifted.
 
-## Data Storage
+## How files are served
 
-### File Storage
+While a file is on the CDN it sits at a public URL derived from a hash of the file itself. Anyone holding that link can open it, and anyone who has the same file can work out the link. Links stop working once the file is removed.
 
-- Converted GIFs and downloaded media files are cached on our servers and **deleted automatically after 7 days**
-- Files are identified by BLAKE3 hash, which is also how duplicate work is avoided
-- Processing records link a file to a Discord user ID; those records are **deleted automatically after 7 days**
-- Files served via the CDN expire sooner, on a schedule based on size: roughly 72 hours for files under 100 MB, down to about 2 hours for the largest. Once expired they are removed from CDN storage
+## Who else receives it
 
-### Logs
+The service runs on Discord and stores files with Cloudflare, so both handle your data in the course of normal operation. When you run `/download`, the request to the source platform is made by our servers rather than by you, and that platform's own policy governs what it records. We do not sell or trade your data, and we disclose it to no one else except where the law compels us.
 
-- Server logs may contain Discord user IDs for operational purposes
-- Logs are **deleted automatically after 7 days**
-- Error logs do not contain file contents or personal messages
+## Your choices
 
-## Data Sharing
+Email gronkasupport@proton.me to ask what is stored about you, or to have it deleted. Everything other than your usage counts and any ban record is deleted on the schedule above regardless.
 
-We do not sell, trade, or rent your personal information to third parties. We may share data only in the following circumstances:
+If you are in a jurisdiction with a data protection authority, you may complain to it.
 
-- **Service Providers**: With hosting providers and CDN services necessary to operate the bot
-- **Legal Requirements**: When required by law or to protect our rights
-- **Discord**: Information is shared with Discord as part of normal bot operation (per Discord's Terms of Service)
+## Children
 
-## Your Rights
+gronka is not intended for anyone under the age of 13.
 
-You have the right to:
+## Changes
 
-- **Access**: Request information about what data we have about you. In practice this is your user ID, your first and last use timestamps, and your command counters — everything else about you older than 7 days has already been deleted
-- **Deletion**: Request deletion of your data. Your per-user tally can be removed on request; everything else deletes itself within 7 days whether you ask or not
-- **Opt-Out**: Stop using the bot at any time. Doing nothing else, all of your data except the per-user tally is gone within 7 days
+This policy may be updated. The date above records the most recent change, and continuing to use the service after a change means you accept it.
 
-To exercise these rights, contact us via email at gronkasupport@proton.me or through the [GitHub repository](https://github.com/thedorekaczynski/gronka).
+## Contact
 
-## Data Security
-
-We implement reasonable security measures to protect your data:
-
-- Files are stored securely on our servers
-- Access to data is restricted to necessary system operations
-- We use industry-standard practices for data protection
-
-However, no method of transmission over the internet is 100% secure. While we strive to protect your data, we cannot guarantee absolute security.
-
-## Children's Privacy
-
-Our service is not intended for users under the age of 13. We do not knowingly collect information from children under 13. If you believe we have collected information from a child under 13, please contact us immediately.
-
-## Changes to This Policy
-
-We may update this privacy policy from time to time. We will notify users of any material changes by updating the "Last Updated" date at the top of this policy.
-
-Your continued use of the service after changes constitutes acceptance of the updated policy.
-
-## Contact Us
-
-If you have questions about this privacy policy, please contact us:
-
-- **Email**: gronkasupport@proton.me
-- **GitHub**: [https://github.com/thedorekaczynski/gronka](https://github.com/thedorekaczynski/gronka)
-
-## Third-Party Services
-
-This service uses the following third-party services:
-
-- **Discord**: Bot platform and API provider
-- **Cloudflare**: CDN and tunnel services
-- **Hosting Provider**: Server infrastructure
-
-These services have their own privacy policies governing data handling.
-
-### Website Analytics and Heatmaps
-
-Our website (separate from the Discord bot) uses the following third-party services, which set cookies and collect usage data such as pages visited, approximate location, device/browser, and interactions:
-
-- **Google Tag Manager / Google Analytics**: aggregate site traffic and usage analytics
-- **Microsoft Clarity**: heatmaps and anonymized session recordings to understand how visitors use the site
-
-We do not serve advertising on the website or in the bot.
-
-When you use the download command, the URL you submit is fetched from the source platform (e.g. Twitter/X, TikTok, Instagram, YouTube) by download tools running on our own infrastructure. The source platform sees the request from our servers, not from you, and its own privacy policy governs that interaction.
-
-## Data Retention
-
-Deletion is automatic, on a job that runs every few hours. It is not a manual process and does not depend on anyone remembering to do it.
-
-**Deleted after 7 days:**
-
-- **Media Files**: cached GIFs, videos and images on our servers
-- **Logs**: server and error logs
-- **Operation Records**: per-command records of what was processed and whether it succeeded
-- **Processed URLs**: records linking a submitted URL to a resulting file and a user ID
-
-**Shorter than 7 days:**
-
-- **CDN Uploads**: expire on a size-based schedule, from about 72 hours down to about 2 hours for the largest files
-
-**Kept until you ask us to remove it:**
-
-- **Per-User Tally**: your Discord user ID, first and last use timestamps, and counters for how many commands you have run. This is what lets the bot report how many people use it. It contains no username, no URLs, and no file references
-- **Moderation Records**: if you are banned, your user ID and the ban reason
-
-**Never stored at all:**
-
-- **Usernames**: Discord provides one with every interaction; it is discarded rather than written to disk, and is not sent to our CDN provider or to notification services
-
-## International Data Transfers
-
-Your data may be processed and stored in countries other than your own, depending on where the service is hosted.
-
-## Compliance
-
-We aim to comply with applicable data protection laws, including GDPR for EU users and CCPA for California residents, to the extent applicable to this service.
-
----
-
-_This privacy policy is effective as of the date listed above and applies to all users of the gronka Discord bot service._
+Email gronkasupport@proton.me, or open an issue at [github.com/thedorekaczynski/gronka](https://github.com/thedorekaczynski/gronka).

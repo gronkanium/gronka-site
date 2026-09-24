@@ -24,7 +24,6 @@ Source: https://github.com/thedorekaczynski/gronka
 
 - [Home]({{ site.url }}/): what the bot does, and Docker self-hosting instructions.
 - [Commands]({{ site.url }}/commands/): index of every slash command.
-- [Donate]({{ site.url }}/donate/): how to support the project.
 - [Privacy policy]({{ site.url }}/privacy/): what the bot stores and for how long.
 - [Terms of use]({{ site.url }}/terms/): terms covering use of the hosted instance.
 

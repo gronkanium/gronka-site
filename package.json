@@ -7,9 +7,7 @@
     "prepare": "husky || true",
     "jekyll:build": "bundle exec jekyll build",
     "jekyll:serve": "bundle exec jekyll serve",
-    "indexnow": "bun scripts/indexnow.js",
-    "stats:ga4": "bun scripts/ga4.js",
-    "stats:clarity": "bun scripts/clarity.js"
+    "indexnow": "bun scripts/indexnow.js"
   },
   "author": "thedorekaczynski",
   "license": "MIT",

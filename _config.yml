@@ -26,20 +26,11 @@ image:
 # Additional SEO metadata
 keywords: "discord, bot, gif, video, converter, social media, download, media, conversion"
 
-# Single source of truth for the invite link. GTM triggers match on "Click URL contains
-# discord.com/oauth2/authorize", so this string must not change shape.
+# Single source of truth for the invite link.
 discord_invite: "https://discord.com/oauth2/authorize?client_id=1522194017692156046"
 
-# Support server, distinct from the install link above. Deliberately a discord.gg URL so it
-# does NOT match the GTM invite_click trigger — joining the server is not a bot install and
-# must not inflate that conversion.
+# Support server, distinct from the install link above.
 discord_server: "https://discord.gg/5Z4hEeHshH"
-
-# analytics / heatmaps (production only; blank = disabled)
-# see _includes/tracking.html
-gtm_id: "GTM-PNKLQBTV"  # container for pixels, conversions
-ga4_id: "G-PQX32Q8VMQ"  # Google Analytics 4 — visitor stats
-clarity_id: "xp6mutexk8"          # Microsoft Clarity heatmaps
 
 # build settings
 markdown: kramdown

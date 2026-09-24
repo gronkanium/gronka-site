@@ -10,7 +10,7 @@ GIFs. Built with [Jekyll](https://jekyllrb.com/) and served at
 | Path | What it is |
 | --- | --- |
 | `index.md` | Home page (overview + quick start) |
-| `donate.md` / `privacy.md` / `terms.md` | Standalone pages |
+| `privacy.md` / `terms.md` | Standalone pages |
 | `_data/commands.yml` | Source of truth for the command reference (`/download`, `/convert`, `/optimize`, `/info`) |
 | `_data/navigation.yml` | Nav links |
 | `_includes/` / `_layouts/` / `_sass/` | Templates and styles |
