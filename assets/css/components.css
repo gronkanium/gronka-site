@@ -212,44 +212,23 @@ code {
   background-color: #1a1a1a;
 }
 
-.footer-col-wrapper {
+.footer-links,
+#render-time {
   color: #b0b0b0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.footer-col-2 {
   text-align: center;
-  width: 100%;
-}
-
-.footer-col-2 p {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
   margin: 0;
-  white-space: nowrap;
 }
 
-.github-link {
-  color: #b0b0b0 !important;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  vertical-align: middle;
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
-.github-link:hover {
-  color: #e0e0e0 !important;
-}
-
-.github-link svg {
-  vertical-align: middle;
-  transform: translateY(1px);
-  /* Uncomment the line below to visually verify alignment with text baseline */
-  /* outline: 1px solid red; */
+#render-time {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
 }
 
 .footer-link {
@@ -259,13 +238,6 @@ code {
 
 .footer-link:hover {
   color: #e0e0e0 !important;
-}
-
-#render-time {
-  display: block !important;
-  color: #b0b0b0 !important;
-  text-align: center;
-  white-space: normal !important;
 }
 
 /* Tables */

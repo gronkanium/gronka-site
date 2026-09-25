@@ -29,9 +29,6 @@ keywords: "discord, bot, gif, video, converter, social media, download, media, c
 # Single source of truth for the invite link.
 discord_invite: "https://discord.com/oauth2/authorize?client_id=1522194017692156046"
 
-# Support server, distinct from the install link above.
-discord_server: "https://discord.gg/5Z4hEeHshH"
-
 # build settings
 markdown: kramdown
 theme: minima

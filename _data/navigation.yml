@@ -5,3 +5,9 @@ footer:
     url: /privacy/
   - title: terms of use
     url: /terms/
+  - title: github
+    url: https://github.com/thedorekaczynski/gronka
+    external: true
+  - title: discord
+    url: https://discord.gg/5Z4hEeHshH
+    external: true
