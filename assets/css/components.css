@@ -212,23 +212,14 @@ code {
   background-color: #1a1a1a;
 }
 
-.footer-links,
-#render-time {
+.footer-links {
   color: #b0b0b0;
   text-align: center;
   margin: 0;
-}
-
-.footer-links {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.5rem;
-}
-
-#render-time {
-  margin-top: 0.5rem;
-  font-size: 0.875rem;
 }
 
 .footer-link {

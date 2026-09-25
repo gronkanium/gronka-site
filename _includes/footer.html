@@ -11,64 +11,6 @@
         {%- endif -%}
       {%- endfor -%}
     </p>
-    <p id="render-time">rendered in: --</p>
-    <script>
-      (function() {
-        function updateRenderTime() {
-          var element = document.getElementById('render-time');
-          if (!element) {
-            console.warn('render-time element not found');
-            return;
-          }
-          
-          var renderTime = 0;
-          
-          // Try Performance Navigation Timing API (legacy)
-          if (window.performance && window.performance.timing) {
-            var timing = window.performance.timing;
-            if (timing.loadEventEnd > 0 && timing.navigationStart > 0) {
-              renderTime = (timing.loadEventEnd - timing.navigationStart) / 1000;
-            }
-          }
-          
-          // Try Performance Navigation Timing API v2
-          if (renderTime === 0 && window.performance && window.performance.getEntriesByType) {
-            try {
-              var navTiming = window.performance.getEntriesByType('navigation')[0];
-              if (navTiming && navTiming.loadEventEnd > 0) {
-                renderTime = navTiming.loadEventEnd / 1000;
-              }
-            } catch (e) {
-              // Ignore errors
-            }
-          }
-          
-          // Fallback: use performance.now() if page just loaded
-          if (renderTime === 0 && window.performance && window.performance.now) {
-            var now = window.performance.now();
-            if (now > 0 && now < 60000) { // Reasonable range (less than 1 minute)
-              renderTime = now / 1000;
-            }
-          }
-          
-          if (renderTime > 0) {
-            element.textContent = 'rendered in: ' + renderTime.toFixed(3) + 's';
-          } else {
-            element.textContent = 'rendered in: --';
-          }
-        }
-        
-        // Try immediately if page is already loaded
-        if (document.readyState === 'complete' || document.readyState === 'interactive') {
-          setTimeout(updateRenderTime, 0);
-        }
-        
-        // Also try on load event
-        window.addEventListener('load', function() {
-          setTimeout(updateRenderTime, 0);
-        });
-      })();
-    </script>
     <script>
       (function() {
         function initCopyButtons() {
