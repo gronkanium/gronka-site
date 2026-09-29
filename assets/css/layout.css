@@ -26,3 +26,11 @@ html {
 .wrapper {
   background-color: transparent;
 }
+
+html {
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
