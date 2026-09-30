@@ -7,7 +7,7 @@ permalink: /privacy/
 
 # Privacy Policy
 
-**Last updated:** September 23, 2026
+**Last updated:** September 30, 2026
 
 This policy covers the gronka Discord bot and the website at gronka.dev. It explains what is stored, why, how long it is kept, and how to have it deleted.
 
@@ -17,7 +17,7 @@ This policy covers the gronka Discord bot and the website at gronka.dev. It expl
 
 **The media and links you submit.** Files you send to `/convert` or `/optimize`, and URLs you send to `/download`, along with the media retrieved for you.
 
-**File hashes.** A BLAKE3 hash of each processed file, used to recognize a file we have already converted so the work is not repeated.
+**File hashes.** A hash of each processed file (a fingerprint computed from its contents), used to recognize a file we have already converted so the work is not repeated.
 
 **Usage counts.** How many commands you have run, and the dates you first and last used the bot.
 
