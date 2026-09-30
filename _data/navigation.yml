@@ -6,7 +6,7 @@ footer:
   - title: terms of use
     url: /terms/
   - title: github
-    url: https://github.com/thedorekaczynski/gronka
+    url: https://github.com/gronkanium/gronka
     external: true
     icon: github
   - title: discord

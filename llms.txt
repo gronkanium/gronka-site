@@ -13,7 +13,7 @@ admins can enable or disable each download source individually from a built-in w
 dashboard.
 
 Invite link: {{ site.discord_invite }}
-Source: https://github.com/thedorekaczynski/gronka
+Source: https://github.com/gronkanium/gronka
 
 ## Commands
 {% for command in site.data.commands %}

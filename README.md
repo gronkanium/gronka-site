@@ -1,6 +1,6 @@
 # gronka-site
 
-The marketing + docs site for [gronka](https://github.com/thedorekaczynski/gronka), a
+The marketing + docs site for [gronka](https://github.com/gronkanium/gronka), a
 free, open-source Discord bot that downloads media from 20+ platforms and converts it to
 GIFs. Built with [Jekyll](https://jekyllrb.com/) and served at
 **[gronka.dev](https://gronka.dev)**.

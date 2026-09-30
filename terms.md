@@ -27,4 +27,4 @@ gronka is provided "as-is", without warranty. To the fullest extent permitted by
 
 You are responsible for what you submit, for your Discord account's security, and for what you do with downloaded media. You agree to hold gronka and its operator harmless against claims arising from your use of the service or your breach of these terms.
 
-Questions: gronkasupport@proton.me or [github.com/thedorekaczynski/gronka](https://github.com/thedorekaczynski/gronka).
+Questions: gronkasupport@proton.me or [github.com/gronkanium/gronka](https://github.com/gronkanium/gronka).

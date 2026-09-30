@@ -7,7 +7,7 @@ image: /assets/og-image.png
 # gronka
 
 <a href="{{ site.discord_invite }}" id="invite-badge" class="cta-invite"><img src="https://img.shields.io/badge/Add_to_Discord-5865F2?logo=discord&logoColor=white" alt="Add gronka to Discord" height="20"></a>
-<a href="https://github.com/thedorekaczynski/gronka"><img src="https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white" alt="GitHub" height="20"></a>
+<a href="https://github.com/gronkanium/gronka"><img src="https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white" alt="GitHub" height="20"></a>
 
 gronka is a free, open-source discord bot that downloads videos and images from social media and converts them to gifs — right inside your server. no ads to click through, no reposting to sketchy sites: paste a link or drop a file and get it back in the channel.
 
@@ -26,7 +26,7 @@ you can also right-click any message and use the context menu. every download so
 docker is the supported way to run gronka (the image includes ffmpeg, gifsicle, and yt-dlp).
 
 ```bash
-git clone https://github.com/thedorekaczynski/gronka.git
+git clone https://github.com/gronkanium/gronka.git
 cd gronka
 cp .env.example .env
 docker compose up -d

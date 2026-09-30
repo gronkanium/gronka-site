@@ -61,4 +61,4 @@ This policy may be updated. The date above records the most recent change, and c
 
 ## Contact
 
-Email gronkasupport@proton.me, or open an issue at [github.com/thedorekaczynski/gronka](https://github.com/thedorekaczynski/gronka).
+Email gronkasupport@proton.me, or open an issue at [github.com/gronkanium/gronka](https://github.com/gronkanium/gronka).

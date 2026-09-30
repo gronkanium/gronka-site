@@ -9,7 +9,7 @@
     "jekyll:serve": "bundle exec jekyll serve",
     "indexnow": "bun scripts/indexnow.js"
   },
-  "author": "thedorekaczynski",
+  "author": "gronkanium",
   "license": "MIT",
   "devDependencies": {
     "husky": "^9.1.7"
