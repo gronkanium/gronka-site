@@ -208,27 +208,80 @@ code {
 
 /* Site footer */
 .site-footer {
-  border-top: 1px solid #444;
-  background-color: #1a1a1a;
+  border-top: 1px solid #2e2e2e;
+  background-color: #161616;
+  padding: 2rem 0;
 }
 
 .footer-links {
-  color: #b0b0b0;
-  text-align: center;
-  margin: 0;
+  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.5rem;
+  align-items: center;
+  gap: 0.25rem 0.75rem;
+  font-size: 0.9rem;
+  line-height: 1;
+  color: #6f6f6f;
 }
 
 .footer-link {
-  color: #b0b0b0 !important;
+  color: #9a9a9a !important;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.footer-link:hover,
+.footer-link:focus-visible {
+  color: #f0f0f0 !important;
   text-decoration: none;
 }
 
-.footer-link:hover {
-  color: #e0e0e0 !important;
+.footer-icons {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: 0.5rem;
+  padding-left: 1rem;
+  border-left: 1px solid #2e2e2e;
+}
+
+.footer-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.footer-icon:hover,
+.footer-icon:focus-visible {
+  background-color: #262626;
+}
+
+.footer-link:focus-visible {
+  outline: 2px solid #9a9a9a;
+  outline-offset: 2px;
+}
+
+@media (max-width: 600px) {
+  .footer-links {
+    gap: 0.75rem 1.25rem;
+  }
+
+  .footer-sep {
+    display: none;
+  }
+
+  .footer-icons {
+    flex-basis: 100%;
+    justify-content: center;
+    margin: 0.75rem 0 0;
+    padding: 0;
+    border-left: 0;
+  }
 }
 
 /* Tables */
