@@ -17,11 +17,9 @@ When a command fails, we record the command, the site and the error so we can fi
 
 Your media is processed in a temporary folder and deleted as soon as the result is delivered. A result too big to attach on Discord is uploaded to our CDN under a random link that anyone holding it can open, and deleted within three days.
 
-gronka reads message content only to answer its prefix commands and the attachments you point it at. Message text is never stored or logged.
+gronka does not read your server's messages. Discord only shows it messages that mention it, direct messages, and the message you run a command on. Message text is never stored or logged.
 
-gronka uses the following server info:
-
-- Server IDs (only stored if a server sets its own command prefix, alongside that prefix)
+Nothing about servers or channels is kept once a request ends.
 
 Discord delivers your commands and Cloudflare hosts the CDN. When you run `/download`, our servers fetch the link for you, and that site's own policy covers what it records. We sell or share nothing.
 
