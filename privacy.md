@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Privacy Policy
-description: "Privacy policy for the gronka Discord bot: it keeps no record of who you are or what you asked for."
+description: "Privacy policy for the gronka Discord bot: it keeps no record of who you are, and nothing about requests that succeed."
 permalink: /privacy/
 ---
 
@@ -9,11 +9,11 @@ permalink: /privacy/
 
 (Last updated: October 2, 2026)
 
-This covers the gronka Discord bot and gronka.dev. gronka keeps no record of who you are or what you asked for. We are not interested in spying on anyone; we keep only what it takes to keep the service working.
+This covers the gronka Discord bot and gronka.dev. gronka keeps no record of who you are, and nothing about requests that succeed. We are not interested in spying on anyone; we keep only what it takes to keep the service working.
 
 Whenever a command is run, an anonymous counter for that command goes up. It holds no user, server or channel ID, and its totals are shown by `/info`.
 
-When a command fails, we record the command, the site and the error so we can fix it, with any link cut down to its website. No user ID is kept with it, and these records are deleted after seven days.
+When a command fails, we keep the full link, the error and which download steps were tried, so we can fix the failure. No user, server or channel ID is kept with it, and these records are deleted after seven days. Nothing is kept for requests that succeed.
 
 Your media is processed in a temporary folder and deleted as soon as the result is delivered. A result too big to attach on Discord is uploaded to our CDN under a random link that anyone holding it can open, and deleted within three days.
 
