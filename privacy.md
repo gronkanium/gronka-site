@@ -25,4 +25,4 @@ Discord delivers your commands and Cloudflare hosts the CDN. When you run `/down
 
 gronka is not intended for anyone under 13.
 
-Questions: gronkasupport@proton.me or [github.com/gronkanium/gronka](https://github.com/gronkanium/gronka).
+Questions: [support@gronka.dev](mailto:support@gronka.dev) or [github.com/gronkanium/gronka](https://github.com/gronkanium/gronka).

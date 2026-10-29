@@ -27,4 +27,4 @@ gronka is provided "as-is", without warranty of any kind. To the fullest extent 
 
 We may refuse the service to any user or server that breaks these terms, or for any other reason.
 
-Questions: gronkasupport@proton.me or [github.com/gronkanium/gronka](https://github.com/gronkanium/gronka).
+Questions: [support@gronka.dev](mailto:support@gronka.dev) or [github.com/gronkanium/gronka](https://github.com/gronkanium/gronka).
